@@ -340,7 +340,7 @@ bool GetDescriptionHDF5(const std::string &path, int &layerPerImg,
     return false;
   }
 
-  ttlFrames /= 40;
+  //ttlFrames /= 40;
 
   return true;
 }
@@ -410,7 +410,7 @@ bool ReadHDF5(const std::string &path, const int layerPerImg,
   File file(path, File::ReadOnly);
 
   for (int i = 0; i < targetNumImg; i++) {
-    const auto g0 = file.getGroup("/t" + std::to_string(i * 40));
+    const auto g0 = file.getGroup("/t" + std::to_string(i));
     const auto dset = g0.getDataSet("channel" + std::to_string(channel));
     const auto dims = dset.getDimensions();
     if (dims.size() != 3) {

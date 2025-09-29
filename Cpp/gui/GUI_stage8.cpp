@@ -678,7 +678,7 @@ void GUI::DrawStage8() {
           GetMarkersInAvgDispArea(markerInAvgDispArea);
           // remove global displacement
           for (int i = 0; i < currentLoadedFrames; i++) {
-            Eigen::MatrixXd global_R;
+            /*Eigen::MatrixXd global_R;
             Eigen::VectorXd global_T;
             EstimateGlobalMovement(i, markerInAvgDispArea, global_R, global_T);
             logger().debug("frame {} global R=[{} {} {}; {} {} {}; {} {} {}], "
@@ -689,7 +689,8 @@ void GUI::DrawStage8() {
                            global_T(0), global_T(1), global_T(2));
             analysisDisplacementVec.push_back(
                 (markerPointLocArray[i] * global_R).rowwise() +
-                global_T.transpose());
+                global_T.transpose());*/
+            analysisDisplacementVec.push_back(markerPointLocArray[i]);
             /*
             Eigen::MatrixXd V_analysis = markerPointLocArray[i];
             // remove the global movement

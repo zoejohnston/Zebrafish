@@ -6,8 +6,8 @@ data/
 report/
 
 *.asv
-
-
+CMakeSettings.json
+.vs/
 bin*
 build*
 release*
